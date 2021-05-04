@@ -1,9 +1,11 @@
-function Note(){
+import React from "react"
+
+function Note(props){
     return(
         <div className="note">
-            <h1>Title</h1>
-            <p>Here is your note description</p>
-            <button>DELETE</button>
+            <h1>{props.title}</h1>
+            <p>{props.content}</p>
+            <button onClick={()=>props.onDelete(props.id)}>DELETE</button>
         </div>
     );
 }
