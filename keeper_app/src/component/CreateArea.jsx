@@ -18,6 +18,7 @@ function handleIsExpand(){
 
 function handleChange(event){
     const {name, value}=event.target;
+    
     setNote(prevValue =>{
         return{
             ...prevValue,
@@ -26,11 +27,16 @@ function handleChange(event){
     })}
 
 function submitNote(event){
-    props.onAdd(note);
-    setNote({
-        title:"",
-        content:""
-    });
+    if(note.title.length===0){
+        alert("Title field can't be empty")
+    }else{
+        props.onAdd(note);
+        setNote({
+            title:"",
+            content:""
+        });
+    }
+   
     event.preventDefault();
 }
 
