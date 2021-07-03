@@ -9,7 +9,7 @@ const [note,setNote] = useState({
     content:""
 });
 
-const[isExpanded, setIsExpanded]=useState(false);
+const[isExpanded, setIsExpanded]=useState(true));
 
 
 function handleIsExpand(){
